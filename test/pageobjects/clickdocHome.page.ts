@@ -1,4 +1,4 @@
-import { leftClick, waitForElement } from "../utils/utils.ts";
+import { leftClick, waitForElement } from "../utils/utils";
 import Page from "./page.ts";
 
 class ClickdocHomePage extends Page {

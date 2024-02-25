@@ -6,7 +6,6 @@ import { leftClick } from "../utils/utils";
 
 describe('Insert the search term in the Subject area, Name of the doctor, Practiceand City, PLZ or District input field and click Finden Button', async () => {
 
-    const physicianProfile = await browser.$('class="text-wrap header__content--title"');
     const page = new Page();
 
     before(async () => {
@@ -41,16 +40,4 @@ describe('Insert the search term in the Subject area, Name of the doctor, Practi
         expect(await clickdocSearchPage.getAppointmentButtonBackgroundColor(peterWunderlich.name, peterWunderlich.lastname)).toBe(expectedAppointmentButtonColor);
     });
 
-    it('Should validate physician Name and Address', async () => {
-        await physicianProfile.getText();
-    });
-
-    // it('Should validate the current day opening hours from contact section', async () => {
-        
-    // })
-
-    // it('Should validate the current day is shown in bold', async () => {
-
-
-    // });
 });

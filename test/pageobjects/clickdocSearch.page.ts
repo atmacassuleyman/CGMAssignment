@@ -1,4 +1,4 @@
-import { waitToDisappear } from "../utils/utils.ts";
+import { waitToDisappear } from "../utils/utils";
 import Page from "./page.ts";
 
 class SearchPage extends Page {
