@@ -1,5 +1,8 @@
+import { browser } from '@wdio/globals'
 import { leftClick, waitForElement } from "../utils/utils";
 import Page from "./page.ts";
+import { Physician } from '../constants/physician.constant.ts';
+import clickdocSearchPage from './clickdocSearch.page.ts';
 
 class ClickdocHomePage extends Page {
     get pageHeader() {
@@ -30,6 +33,13 @@ class ClickdocHomePage extends Page {
     }
     async enterSearchLocation(location: string) {
         await this.searchLocationTextBox.setValue(location);
+    }
+
+    async searchPhysician(physician: Physician) {
+        await this.enterSearchName(physician.name, physician.lastName);
+        await this.enterSearchLocation('Testhausen');
+        await leftClick(await this.findButton);
+        await clickdocSearchPage.waitForPhysicianCardsLoading();
     }
 }
 

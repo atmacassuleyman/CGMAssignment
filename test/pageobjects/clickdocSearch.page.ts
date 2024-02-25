@@ -1,3 +1,4 @@
+import { browser } from '@wdio/globals'
 import { waitToDisappear } from "../utils/utils";
 import Page from "./page.ts";
 
@@ -16,15 +17,19 @@ class SearchPage extends Page {
     }
 
     getAppointmentButton(firstName: string, lastName: string) {
-        return browser.$(`//cd-list-entry-headline//*[contains(text(), '${firstName} ${lastName}')]/ancestor::app-search-result-card//button`);
+        return this.getPhysicianCard(firstName, lastName).$('//button');
     }
 
     getPhysicianAvailableSlot(firstName: string, lastName: string) {
-        return browser.$(`//cd-list-entry-headline//*[contains(text(), '${firstName} ${lastName}')]/ancestor::app-search-result-card//*[contains(@class,'available-slots__time')]`);
+        return this.getPhysicianCard(firstName, lastName).$('//*[contains(@class,"available-slots__time")]');
     }
 
     getPhysicianAddress(firstName: string, lastName: string) {
-        return browser.$(`//cd-list-entry-headline//*[contains(text(), '${firstName} ${lastName}')]/ancestor::app-search-result-card//cd-list-entry-text`);
+        return this.getPhysicianCard(firstName, lastName).$('//cd-list-entry-text');
+    }
+
+    getPhysicianCard(firstName: string, lastName: string) {
+        return browser.$(`//cd-list-entry-headline//*[contains(text(), '${firstName} ${lastName}')]/ancestor::app-search-result-card`);
     }
 
     async getAppointmentButtonBackgroundColor(firstName: string, lastName: string): Promise<string | undefined> {

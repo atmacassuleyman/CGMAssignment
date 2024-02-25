@@ -1,7 +1,17 @@
-const peterWunderlich = {
+const peterWunderlich: Physician = {
         name: 'Peter',
-        lastname: 'Wunderlich',
+        lastName: 'Wunderlich',
         address: 'Teststraße 3, 12345 Testhausen'
     }
 
-export {peterWunderlich};
+interface Physician {
+    name: string;
+    lastName: string;
+    address: string;
+}
+export {
+    peterWunderlich
+};
+
+export type { Physician };
+
