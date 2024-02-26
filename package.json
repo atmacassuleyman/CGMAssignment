@@ -1,5 +1,5 @@
 {
-  "name": "WebdriverIOMochaTS",
+  "name": "CGMClickdoc",
   "type": "module",
   "main": "index.js",
   "devDependencies": {
@@ -10,6 +10,7 @@
     "@wdio/local-runner": "^8.32.3",
     "@wdio/mocha-framework": "^8.32.3",
     "@wdio/spec-reporter": "^8.32.2",
+    "allure-commandline": "2.27.0",
     "chromedriver": "^122.0.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
@@ -19,7 +20,8 @@
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "dependencies": {
-    "rgb2hex": "^0.2.5",
-    "@wdio/cli": "^8.32.3"
+    "@wdio/cli": "^8.32.3",
+    "allure-commandline": "^2.27.0",
+    "rgb2hex": "^0.2.5"
   }
 }

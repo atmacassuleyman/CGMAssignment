@@ -14,4 +14,3 @@ export {
 };
 
 export type { Physician };
-
