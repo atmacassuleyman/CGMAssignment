@@ -1,5 +1,5 @@
 {
-  "name": "CGMClickdoc",
+  "name": "cgmclickdoc",
   "type": "module",
   "main": "index.js",
   "devDependencies": {

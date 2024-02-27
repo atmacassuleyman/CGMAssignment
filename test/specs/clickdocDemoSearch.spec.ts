@@ -3,9 +3,9 @@ import clickdocHomePage from "../pageobjects/clickdocHome.page.ts";
 import clickdocSearchPage from "../pageobjects/clickdocSearch.page.ts";
 import Page from "../pageobjects/page.ts";
 import physicianProfilePage from "../pageobjects/physicianProfile.page.ts";
-import { leftClick, waitForElement } from "../utils/utils.ts";
+import { leftClick, waitForElement } from "../utils/utils";
 
-describe('Insert the search term in the Subject area, Name of the doctor, Practiceand City, PLZ or District input field and click Finden Button', () => {
+describe('Insert the search term in the Subject area, Name of the doctor, Practice and City, PLZ or District input field and click Finden Button', () => {
 
     const page = new Page();
 
@@ -16,7 +16,7 @@ describe('Insert the search term in the Subject area, Name of the doctor, Practi
     });
 
     describe('Search page result validations', () => {
-        
+
         it('Should validate "Peter Wunderlich" physician view was displayed as first in the list of results.', async () => {
             const firstPhysicianText = await clickdocSearchPage.physicianCards[0].getText();
             expect(firstPhysicianText).toBe(`${peterWunderlich.name} ${peterWunderlich.lastName}`);
@@ -49,8 +49,8 @@ describe('Insert the search term in the Subject area, Name of the doctor, Practi
         });
 
         it('Should validate physician name and address', async () => {
-           expect(await physicianProfilePage.physicianPageTitle.getText()).toBe(`${peterWunderlich.name} ${peterWunderlich.lastName}`);
-           expect((await (await physicianProfilePage.physicianAddress).getText()).trim()).toBe(peterWunderlich.address);
+            expect(await physicianProfilePage.physicianPageTitle.getText()).toBe(`${peterWunderlich.name} ${peterWunderlich.lastName}`);
+            expect((await (await physicianProfilePage.physicianAddress).getText()).trim()).toBe(peterWunderlich.address);
         });
 
         it('Should validate the current day opening hours from contact section', async () => {

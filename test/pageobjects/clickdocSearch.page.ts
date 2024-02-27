@@ -1,4 +1,4 @@
-import { browser } from '@wdio/globals'
+import { browser } from '@wdio/globals';
 import { waitToDisappear } from "../utils/utils";
 import Page from "./page.ts";
 
@@ -33,7 +33,7 @@ class SearchPage extends Page {
     }
 
     async getAppointmentButtonBackgroundColor(firstName: string, lastName: string): Promise<string | undefined> {
-        const appointmentButtonBgColor = (await this.getAppointmentButton(firstName, lastName).$('cd-abstract-button').getCSSProperty('background-color'));
+        const appointmentButtonBgColor = await this.getAppointmentButton(firstName, lastName).$('cd-abstract-button').getCSSProperty('background-color');
         return appointmentButtonBgColor.parsed.rgba?.toLowerCase().replace(/\s/g, '');
     }
 

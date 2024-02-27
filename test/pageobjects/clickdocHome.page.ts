@@ -1,7 +1,7 @@
-import { browser } from '@wdio/globals'
+import { browser } from '@wdio/globals';
 import { leftClick, waitForElement } from "../utils/utils";
 import Page from "./page.ts";
-import { Physician } from '../constants/physician.constant.ts';
+import { Physician } from '../constants/physician.constant';
 import clickdocSearchPage from './clickdocSearch.page.ts';
 
 class ClickdocHomePage extends Page {

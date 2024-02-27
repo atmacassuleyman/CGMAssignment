@@ -1,6 +1,6 @@
-import { browser } from '@wdio/globals'
+import { browser } from '@wdio/globals';
 import Page from "./page.ts";
-import { getCurrentDay } from '../utils/utils.ts';
+import { getCurrentDay } from '../utils/utils';
 
 class ProfilePhysicianPage extends Page {
 
@@ -25,7 +25,7 @@ class ProfilePhysicianPage extends Page {
     }
 
     async getPhysicianProfile(): Promise<string> {
-        const physicianFullName = await browser.$('class="text-wrap header__content--title"');
+        const physicianFullName = await browser.$('.text-wrap.header__content--title"');
         return await physicianFullName.getText();
     }
 
